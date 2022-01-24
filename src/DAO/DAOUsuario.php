@@ -80,7 +80,7 @@ class DaoUsuario {
 
     public function Deletar($cod) {
         try {
-            $sql = "DELETE FROM usuario WHERE cod_usuario = :cod";
+            $sql = "DELETE FROM usuario WHERE id = :cod";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(":cod", $cod);
 
@@ -94,7 +94,7 @@ class DaoUsuario {
 
     public function BuscarPorCOD($cod) {
         try {
-            $sql = "SELECT * FROM usuario WHERE cod_usuario = :cod";
+            $sql = "SELECT * FROM usuario WHERE id = :cod";
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->bindValue(":cod", $cod);
             $p_sql->execute();
